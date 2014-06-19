@@ -1,8 +1,10 @@
 <html>
-<body>
+<body style="
+    position: absolute; margin-left: 100; margin-top: 100;">
 	<div><input id="input"></input>
 		<button type="button" id= "button">Click me!</button>
 </div>
+
 <div id="info">
 </div>
 
@@ -12,9 +14,14 @@
  	$("#button").click(function(){
  		var a = $("input").val();
  		var newdiv =$('<div></div>').html(a);
- 		newdiv.val(a);
+ 		newdiv.append('<span style="margin-left:100"><img class="del" src="/Users/wjia/Desktop/delete.jpg" width=16 height=16/></span>');
  		$("#info").append(newdiv);
  		$("#input").val("");
+ 	});
+
+ 	$("img").bind("click",function(){
+ 		$(this).remove();
+ 		//$(this).parent().remove();
  	});
  });
 </script>
