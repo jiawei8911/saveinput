@@ -1,0 +1,22 @@
+<html>
+<body>
+	<div><input id="input"></input>
+		<button type="button" id= "button">Click me!</button>
+</div>
+<div id="info">
+</div>
+
+<script src="/Users/wjia/Workshops/jquery-1.11.1.min.js"></script>
+<script>
+ $(document).ready(function(){
+ 	$("#button").click(function(){
+ 		var a = $("input").val();
+ 		var newdiv =$('<div></div>').html(a);
+ 		newdiv.val(a);
+ 		$("#info").append(newdiv);
+ 		$("#input").val("");
+ 	});
+ });
+</script>
+</body>
+</html>
