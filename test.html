@@ -11,20 +11,32 @@
 <script src="/Users/wjia/Workshops/jquery-1.11.1.min.js"></script>
 <script>
  $(document).ready(function(){
+	
+	var aArray = new Array();
+	aArray[0]= "Jun Tao";
+	aArray[1]="Shen Tong";
+	aArray[2]="Jia Wei";
+	$.each(aArray,function(key,val){
+		var inputinfo = val;
+		addNewDiv(inputinfo);
+	});
+
  	$("#button").click(function(){
- 		var a = $("input").val();
- 		var newdiv =$('<div></div>').html(a);
- 		newdiv.append('<button id="del">X</button>');
- 		$("#info").append(newdiv);
- 		$("#input").val("");
 
-	 	$("#del").on('click',function(){
-
-	 		$(this).parent().remove();
-	 	});
+ 		var inputinfo = $("input").val();
+ 		addNewDiv(inputinfo);
+ 		$("#input").val("");	 	
  	});
-
  });
+
+	 var addNewDiv = function(a){
+	 	var newdiv =$('<div></div>').html(a);
+	 	newdiv.append('<img src = "delete.jpg" width= 16 high = 16/>');
+	 	$("#info").append(newdiv);
+	 	$("img").on('click',function(){
+			$(this).parent().remove();
+		});
+	 }
 </script>
 </body>
 </html>
