@@ -1,0 +1,10 @@
+body{
+	position: absolute; 
+	margin-left: 100; 
+	margin-top: 100;
+}
+
+img{
+	width:16px; 
+	height:16px;
+}
