@@ -17,12 +17,13 @@
  		newdiv.append('<button id="del">X</button>');
  		$("#info").append(newdiv);
  		$("#input").val("");
+
+	 	$("#del").on('click',function(){
+
+	 		$(this).parent().remove();
+	 	});
  	});
 
- 	$("#del").click(function(){
- 		$(this).remove();
- 		//$(this).parent().remove();
- 	});
  });
 </script>
 </body>
